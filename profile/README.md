@@ -4,7 +4,9 @@
 
 Big Data & AI Systems is a research and open-source project organization focused on the intersection of **Big Data, distributed data processing, cloud computing, and AI-powered data systems**.
 
-The organization brings together practical engineering, research-oriented experimentation, and educational projects involving scalable data platforms and modern AI technologies.
+The organization brings together research-oriented experimentation, practical engineering, and educational projects involving scalable data platforms and modern AI technologies.
+
+---
 
 ## Research & Project Areas
 
@@ -12,7 +14,7 @@ The organization brings together practical engineering, research-oriented experi
 Scalable data processing, Apache Spark, distributed analytics, data engineering, and large-scale data management.
 
 ### AI-Powered Data Systems
-Scalable AI applications that integrate large language models (LLMs), Retrieval-Augmented Generation (RAG), embeddings, vector search, and large-scale data processing.
+Scalable AI applications integrating **Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), embeddings, vector search, and large-scale data processing**.
 
 ### Cloud Computing & Optimization
 Cloud data management, resource allocation, data placement, workflow scheduling, and optimization of data-intensive applications.
@@ -20,55 +22,197 @@ Cloud data management, resource allocation, data placement, workflow scheduling,
 ### Intelligent Data Centers
 Data-driven and AI-assisted approaches to workload scheduling, resource management, energy efficiency, GPU/thermal analytics, and data-center optimization.
 
-## Featured Projects
+---
 
-### Snowflake Retail Analytics Pipeline
-An end-to-end data engineering and analytics pipeline using **Snowflake, SQL, and Python**, including data ingestion, transformation, validation, analytics, and visualization.
+# Active Projects
 
-> Additional documentation and repository improvements are in progress.
+## 🔹 Scalable RAG with Apache Spark
 
-## Projects in Development
+A research-oriented project exploring **Retrieval-Augmented Generation over increasingly large document collections**, progressing from local semantic retrieval and local LLM generation toward distributed Apache Spark pipelines.
 
-### Scalable RAG with Apache Spark
-Research and implementation of scalable Retrieval-Augmented Generation pipelines for large document collections using distributed data processing.
+The project investigates both **RAG quality** and **system scalability**.
 
-### Big Data Vector Search
-Experiments with large-scale embedding generation, vector indexing, semantic retrieval, and vector-search performance.
+### Current Progress
 
-### LLM-Powered Big Data Analytics
-Natural-language interfaces and LLM-assisted analytics over large-scale structured and unstructured data.
+- ✅ **V1 — Semantic Retrieval**
+  - SciFact scientific corpus
+  - Sentence Transformer embeddings
+  - FAISS vector search
+  - 384-dimensional embeddings
+  - Retrieval evaluation
+  - **Recall@5 = 0.7533**
 
-### Streaming Data + AI
-Exploration of real-time data processing and AI-assisted analytics using technologies such as Spark Structured Streaming.
+- ✅ **V2 — Local RAG**
+  - FAISS retrieval
+  - Retrieved-context construction
+  - Grounded prompting
+  - Ollama
+  - Qwen3 1.7B
+  - Source citations
+  - RAG experiment logging
 
-## Collaboration
+- 🔄 **V3 — RAG Evaluation & Experiments**
+  - Recall@K analysis
+  - Citation faithfulness
+  - Retrieval-depth experiments
+  - Groundedness evaluation
+  - Generation latency
 
-We welcome opportunities to connect projects with research, education, and real-world applications.
+- ⏳ **Next — Scalable RAG**
+  - Larger document collections
+  - Apache Spark / PySpark
+  - Distributed preprocessing
+  - Distributed embedding pipelines
+  - Scalability experiments
 
-### Master's Students
-Research-oriented projects in Big Data, distributed systems, cloud computing, data engineering, and AI-powered data systems.
+**Technologies:**  
+`Python` · `Sentence Transformers` · `FAISS` · `Ollama` · `Qwen3` · `RAG` · `Apache Spark`
 
-### Faculty & Researchers
-Collaborative research involving scalable data systems, AI-powered data infrastructure, cloud computing, optimization, and intelligent computing systems.
+[**View Project →**](https://github.com/BigDataAISystems/scalable-rag-spark)
 
-### Industry Partners
-Applied research, student-industry projects, datasets and case studies, prototypes, and collaborations involving large-scale data and AI systems.
+---
 
-## Technologies
+## 🔹 Snowflake Retail Analytics Pipeline
 
-`Apache Spark` · `PySpark` · `Python` · `SQL` · `Snowflake` · `Databricks` · `Cloud Computing` · `Vector Search` · `RAG` · `LLMs`
+An end-to-end **data engineering and analytics pipeline** using Snowflake, SQL, and Python.
 
-## About
+The project demonstrates:
 
-Big Data & AI Systems is led by **Mahdi Ebrahimi, Ph.D.**, Associate Professor of Computer Science at California State University, Northridge (CSUN).
+- Data ingestion
+- Cloud data warehousing
+- ELT transformations
+- Raw and staging layers
+- Data validation
+- SQL analytics
+- Python analytics
+- Data visualization
+
+**Technologies:**  
+`Snowflake` · `SQL` · `Python` · `Pandas` · `Data Engineering` · `ELT`
+
+**Status:** Completed baseline project with opportunities for future extensions.
+
+[**View Project →**](https://github.com/BigDataAISystems/snowflake-retail-analytics-pipeline)
+
+---
+
+# Planned Projects
+
+## Big Data Vector Search
+
+Research and experiments involving:
+
+- Large-scale embedding generation
+- Vector indexing
+- Semantic retrieval
+- Approximate nearest-neighbor search
+- Vector database scalability
+- Retrieval quality vs. performance
+
+Potential technologies:
+
+`Apache Spark` · `FAISS` · `Qdrant` · `Vector Databases`
+
+---
+
+## LLM-Powered Big Data Analytics
+
+Exploring natural-language interfaces for querying and analyzing large-scale structured and unstructured datasets.
+
+Potential topics include:
+
+- Natural language to SQL
+- LLM-assisted Spark SQL
+- Large-scale data analytics
+- Query validation
+- LLM-generated analytical explanations
+
+Potential technologies:
+
+`LLMs` · `Apache Spark` · `Spark SQL` · `Python`
+
+---
+
+## Streaming Data + AI
+
+Exploring the integration of real-time data processing with AI-assisted analytics.
+
+Potential topics include:
+
+- Streaming data ingestion
+- Real-time analytics
+- Event detection
+- AI-assisted interpretation
+- Automated summaries and alerts
+
+Potential technologies:
+
+`Apache Spark` · `Structured Streaming` · `Kafka` · `AI/LLMs`
+
+---
+
+# Collaboration
+
+We welcome opportunities to connect research and engineering projects with **graduate education, academic research, and real-world applications**.
+
+### 🎓 Master's Students
+
+Research-oriented projects are available in areas including:
+
+- Big Data
+- Distributed data processing
+- Apache Spark
+- Cloud computing
+- Data engineering
+- AI-powered data systems
+- RAG and vector retrieval
+- Intelligent computing infrastructure
+
+### 🔬 Faculty & Researchers
+
+Potential collaborations include:
+
+- Big Data and distributed systems
+- AI-powered data infrastructure
+- Scalable RAG
+- Cloud computing
+- Data-center intelligence
+- Optimization
+- Large-scale AI systems
+
+### 🏢 Industry Partners
+
+We welcome opportunities involving:
+
+- Applied research
+- Student-industry projects
+- Research datasets and case studies
+- Proof-of-concept systems
+- Big Data infrastructure
+- AI-powered enterprise data systems
+- Cloud and data-center optimization
+
+---
+
+# Technology Areas
+
+`Apache Spark` · `PySpark` · `Python` · `SQL` · `Snowflake` · `Databricks` · `Cloud Computing` · `Vector Search` · `FAISS` · `RAG` · `LLMs` · `Ollama`
+
+---
+
+# About
+
+**Big Data & AI Systems** is led by **Mahdi Ebrahimi, Ph.D.**, Associate Professor of Computer Science at California State University, Northridge (CSUN).
 
 His research focuses on **Big Data, large-scale data systems, cloud computing, and optimization**, with current interests at the intersection of **Big Data and Artificial Intelligence**, including scalable AI-powered data systems.
 
-## Links
+---
 
-- **Academic Website:** https://mebrahimii.github.io/
-- **GitHub Organization:** https://github.com/BigDataAISystems
-- **CSUN Computer Science:** https://www.csun.edu/engineering-computer-science/computer-science
+# Links
+
+- 🌐 **Academic Website:** https://mebrahimii.github.io/
+- 💻 **GitHub Organization:** https://github.com/BigDataAISystems
+- 🏫 **CSUN Computer Science:** https://www.csun.edu/engineering-computer-science/computer-science
 
 ---
 
