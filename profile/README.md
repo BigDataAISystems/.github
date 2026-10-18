@@ -4,215 +4,175 @@
 
 Big Data & AI Systems is a research and open-source project organization focused on the intersection of **Big Data, distributed data processing, cloud computing, and AI-powered data systems**.
 
-The organization brings together research-oriented experimentation, practical engineering, and educational projects involving scalable data platforms and modern AI technologies.
-
----
+The organization brings together practical engineering, research-oriented experimentation, and educational projects involving scalable data platforms and modern AI technologies.
 
 ## Research & Project Areas
 
 ### Big Data & Distributed Systems
+
 Scalable data processing, Apache Spark, distributed analytics, data engineering, and large-scale data management.
 
 ### AI-Powered Data Systems
-Scalable AI applications integrating **Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), embeddings, vector search, and large-scale data processing**.
+
+Scalable AI applications that integrate large language models (LLMs), Retrieval-Augmented Generation (RAG), embeddings, vector search, and large-scale data processing.
 
 ### Cloud Computing & Optimization
+
 Cloud data management, resource allocation, data placement, workflow scheduling, and optimization of data-intensive applications.
 
 ### Intelligent Data Centers
+
 Data-driven and AI-assisted approaches to workload scheduling, resource management, energy efficiency, GPU/thermal analytics, and data-center optimization.
 
 ---
 
-# Active Projects
+## Active Projects
 
-## 🔹 Scalable RAG with Apache Spark
+### 🔹 Scalable RAG with Apache Spark
 
-A research-oriented project exploring **Retrieval-Augmented Generation over increasingly large document collections**, progressing from local semantic retrieval and local LLM generation toward distributed Apache Spark pipelines.
+A research-oriented project investigating **Retrieval-Augmented Generation, retrieval quality, corpus scalability, and distributed AI processing** over increasingly large document collections.
 
-The project investigates both **RAG quality** and **system scalability**.
+The project has evolved from local semantic retrieval and RAG evaluation to **MS MARCO scalability experiments, Apache Spark embedding pipelines, and a reproducible framework for future multi-worker cloud experiments**.
 
-### Current Progress
+**Current progress:**
 
 - ✅ **V1 — Semantic Retrieval**
-  - SciFact scientific corpus
+  - SciFact corpus
   - Sentence Transformer embeddings
-  - FAISS vector search
-  - 384-dimensional embeddings
-  - Retrieval evaluation
-  - **Recall@5 = 0.7533**
+  - FAISS semantic vector search
+  - retrieval evaluation
 
 - ✅ **V2 — Local RAG**
-  - FAISS retrieval
-  - Retrieved-context construction
-  - Grounded prompting
-  - Ollama
-  - Qwen3 1.7B
-  - Source citations
+  - retrieved-context construction
+  - grounded LLM prompting
+  - source citations
   - RAG experiment logging
 
-- 🔄 **V3 — RAG Evaluation & Experiments**
-  - Recall@K analysis
-  - Citation faithfulness
-  - Retrieval-depth experiments
-  - Groundedness evaluation
-  - Generation latency
+- ✅ **V3 — RAG Evaluation & Top-K Experiments**
+  - Recall@K and retrieval-depth analysis
+  - groundedness evaluation
+  - citation faithfulness and validity
+  - stratified Top-K experiments
+  - generation-latency analysis
 
-- ⏳ **Next — Scalable RAG**
-  - Larger document collections
-  - Apache Spark / PySpark
-  - Distributed preprocessing
-  - Distributed embedding pipelines
-  - Scalability experiments
+- ✅ **V4 — MS MARCO & Single-Machine Scalability**
+  - controlled nested corpora from **1K to 250K documents**
+  - 300 fixed evaluation queries
+  - embedding-time and memory scaling
+  - FAISS index-size and retrieval-latency measurements
+  - Recall@5 scaling
+  - **250K embedding time: approximately 2.97 hours**
+  - identified document embedding as the dominant preprocessing bottleneck
 
-**Technologies:**  
-`Python` · `Sentence Transformers` · `FAISS` · `Ollama` · `Qwen3` · `RAG` · `Apache Spark`
+- ✅ **V5 — Apache Spark Local Parallelism**
+  - PySpark / Apache Spark embedding pipelines
+  - Sentence Transformers inside Spark workers
+  - controlled Spark partition and PyTorch-thread experiments
+  - Spark-native corpus ingestion
+  - demonstrated that increasing local Spark parallelism does not create additional physical compute resources
 
-[**View Project →**](https://github.com/BigDataAISystems/scalable-rag-spark)
+- ✅ **V6 — Distributed Experiment Framework**
+  - configuration-driven Spark experiments
+  - experiment and environment provenance
+  - expected-document-count safeguards
+  - benchmark and materialization modes
+  - formal Parquet embedding artifact contract
+  - independent artifact validation
+  - positive and deliberate-corruption validation tests
+  - experiment-integrity analysis
+  - strong-scaling analysis framework
+  - explicit distinction between **Spark partitions and physical workers**
 
----
+- ⏳ **V7 — GCP Multi-Worker Spark Scaling**
+  - genuine multi-worker cloud execution
+  - **1 → 2 → 4 worker strong-scaling experiments**
+  - 25K distributed validation
+  - 100K primary strong-scaling benchmark
+  - 250K large-workload validation
+  - speedup and parallel-efficiency analysis
+  - distributed Parquet materialization
+  - cloud cost/performance analysis
 
-## 🔹 Snowflake Retail Analytics Pipeline
+**Selected results:**
 
-An end-to-end **data engineering and analytics pipeline** using Snowflake, SQL, and Python.
+- V3 showed that increasing retrieval depth improves evidence availability but does not necessarily improve groundedness or overall RAG quality.
+- V4 measured Recall@5 decreasing from **0.9967 at 1K documents to 0.8833 at 250K documents** as the retrieval search space increased.
+- V4 required approximately **2.97 hours to embed 250K MS MARCO passages**, identifying embedding as the dominant preprocessing bottleneck.
+- V5 showed that additional local Spark tasks do **not** provide meaningful acceleration when they share the same physical compute resources.
+- V6 established a reproducible distributed experiment framework with configuration provenance, correctness safeguards, artifact validation, and future strong-scaling analysis.
 
-The project demonstrates:
+A central methodological principle established in V6 is:
 
-- Data ingestion
-- Cloud data warehousing
-- ELT transformations
-- Raw and staging layers
-- Data validation
-- SQL analytics
-- Python analytics
-- Data visualization
+> **Spark partitions are not equivalent to physical workers.**
 
-**Technologies:**  
-`Snowflake` · `SQL` · `Python` · `Pandas` · `Data Engineering` · `ELT`
+True distributed speedup will therefore be measured only when additional workers correspond to genuinely additional compute resources.
 
-**Status:** Completed baseline project with opportunities for future extensions.
-
-[**View Project →**](https://github.com/BigDataAISystems/snowflake-retail-analytics-pipeline)
-
----
-
-# Planned Projects
-
-## Big Data Vector Search
-
-Research and experiments involving:
-
-- Large-scale embedding generation
-- Vector indexing
-- Semantic retrieval
-- Approximate nearest-neighbor search
-- Vector database scalability
-- Retrieval quality vs. performance
-
-Potential technologies:
-
-`Apache Spark` · `FAISS` · `Qdrant` · `Vector Databases`
-
----
-
-## LLM-Powered Big Data Analytics
-
-Exploring natural-language interfaces for querying and analyzing large-scale structured and unstructured datasets.
-
-Potential topics include:
-
-- Natural language to SQL
-- LLM-assisted Spark SQL
-- Large-scale data analytics
-- Query validation
-- LLM-generated analytical explanations
-
-Potential technologies:
-
-`LLMs` · `Apache Spark` · `Spark SQL` · `Python`
+**Repository:** [BigDataAISystems/scalable-rag-spark](https://github.com/BigDataAISystems/scalable-rag-spark)
 
 ---
 
-## Streaming Data + AI
+### 🔹 Big Data Vector Search
 
-Exploring the integration of real-time data processing with AI-assisted analytics.
+Experiments with large-scale embedding generation, vector indexing, semantic retrieval, and vector-search performance.
 
-Potential topics include:
+### 🔹 LLM-Powered Big Data Analytics
 
-- Streaming data ingestion
-- Real-time analytics
-- Event detection
-- AI-assisted interpretation
-- Automated summaries and alerts
+Natural-language interfaces and LLM-assisted analytics over large-scale structured and unstructured data.
 
-Potential technologies:
+### 🔹 Streaming Data + AI
 
-`Apache Spark` · `Structured Streaming` · `Kafka` · `AI/LLMs`
+Exploration of real-time data processing and AI-assisted analytics using technologies such as Spark Structured Streaming.
 
 ---
 
-# Collaboration
+## Featured Projects
 
-We welcome opportunities to connect research and engineering projects with **graduate education, academic research, and real-world applications**.
+### Snowflake Retail Analytics Pipeline
 
-### 🎓 Master's Students
+An end-to-end data engineering and analytics pipeline using **Snowflake, SQL, and Python**, including data ingestion, transformation, validation, analytics, and visualization.
 
-Research-oriented projects are available in areas including:
-
-- Big Data
-- Distributed data processing
-- Apache Spark
-- Cloud computing
-- Data engineering
-- AI-powered data systems
-- RAG and vector retrieval
-- Intelligent computing infrastructure
-
-### 🔬 Faculty & Researchers
-
-Potential collaborations include:
-
-- Big Data and distributed systems
-- AI-powered data infrastructure
-- Scalable RAG
-- Cloud computing
-- Data-center intelligence
-- Optimization
-- Large-scale AI systems
-
-### 🏢 Industry Partners
-
-We welcome opportunities involving:
-
-- Applied research
-- Student-industry projects
-- Research datasets and case studies
-- Proof-of-concept systems
-- Big Data infrastructure
-- AI-powered enterprise data systems
-- Cloud and data-center optimization
+> Additional documentation and repository improvements are in progress.
 
 ---
 
-# Technology Areas
+## Collaboration
 
-`Apache Spark` · `PySpark` · `Python` · `SQL` · `Snowflake` · `Databricks` · `Cloud Computing` · `Vector Search` · `FAISS` · `RAG` · `LLMs` · `Ollama`
+We welcome opportunities to connect projects with research, education, and real-world applications.
+
+### Master's Students
+
+Research-oriented projects in Big Data, distributed systems, cloud computing, data engineering, and AI-powered data systems.
+
+### Faculty & Researchers
+
+Collaborative research involving scalable data systems, AI-powered data infrastructure, cloud computing, optimization, and intelligent computing systems.
+
+### Industry Partners
+
+Applied research, student-industry projects, datasets and case studies, prototypes, and collaborations involving large-scale data and AI systems.
 
 ---
 
-# About
+## Technologies
 
-**Big Data & AI Systems** is led by **Mahdi Ebrahimi, Ph.D.**, Associate Professor of Computer Science at California State University, Northridge (CSUN).
+`Apache Spark` · `PySpark` · `Python` · `SQL` · `Snowflake` · `Google Cloud` · `Databricks` · `Cloud Computing` · `Vector Search` · `FAISS` · `RAG` · `LLMs`
+
+---
+
+## About
+
+Big Data & AI Systems is led by **Mahdi Ebrahimi, Ph.D.**, Associate Professor of Computer Science at California State University, Northridge (CSUN).
 
 His research focuses on **Big Data, large-scale data systems, cloud computing, and optimization**, with current interests at the intersection of **Big Data and Artificial Intelligence**, including scalable AI-powered data systems.
 
 ---
 
-# Links
+## Links
 
-- 🌐 **Academic Website:** https://mebrahimii.github.io/
-- 💻 **GitHub Organization:** https://github.com/BigDataAISystems
-- 🏫 **CSUN Computer Science:** https://www.csun.edu/engineering-computer-science/computer-science
+- **Academic Website:** https://mebrahimii.github.io/
+- **GitHub Organization:** https://github.com/BigDataAISystems
+- **Scalable RAG Project:** https://github.com/BigDataAISystems/scalable-rag-spark
+- **CSUN Computer Science:** https://www.csun.edu/engineering-computer-science/computer-science
 
 ---
 
