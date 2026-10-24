@@ -1,10 +1,12 @@
 # Big Data & AI Systems
 
-**Research • Engineering • Open Source**
+**Research | Engineering | Open Source**
 
 Big Data & AI Systems is a research and open-source project organization focused on the intersection of **Big Data, distributed data processing, cloud computing, and AI-powered data systems**.
 
 The organization brings together practical engineering, research-oriented experimentation, and educational projects involving scalable data platforms and modern AI technologies.
+
+---
 
 ## Research & Project Areas
 
@@ -22,13 +24,13 @@ Cloud data management, resource allocation, data placement, workflow scheduling,
 
 ### Intelligent Data Centers
 
-Data-driven and AI-assisted approaches to workload scheduling, resource management, energy efficiency, GPU/thermal analytics, and data-center optimization.
+Data-driven and AI-assisted approaches to workload scheduling, resource management, energy efficiency, GPU and thermal analytics, and data-center optimization.
 
 ---
 
 ## Active Projects
 
-### 🔹 Scalable RAG with Apache Spark
+### Scalable RAG with Apache Spark
 
 A research-oriented project investigating **Retrieval-Augmented Generation, retrieval quality, corpus scalability, and distributed AI processing** over increasingly large document collections.
 
@@ -36,26 +38,26 @@ The project has evolved from local semantic retrieval and RAG evaluation to **MS
 
 **Current progress:**
 
-- ✅ **V1 — Semantic Retrieval**
+- **V1 - Semantic Retrieval - Complete**
   - SciFact corpus
   - Sentence Transformer embeddings
   - FAISS semantic vector search
   - retrieval evaluation
 
-- ✅ **V2 — Local RAG**
+- **V2 - Local RAG - Complete**
   - retrieved-context construction
   - grounded LLM prompting
   - source citations
   - RAG experiment logging
 
-- ✅ **V3 — RAG Evaluation & Top-K Experiments**
+- **V3 - RAG Evaluation & Top-K Experiments - Complete**
   - Recall@K and retrieval-depth analysis
   - groundedness evaluation
   - citation faithfulness and validity
   - stratified Top-K experiments
   - generation-latency analysis
 
-- ✅ **V4 — MS MARCO & Single-Machine Scalability**
+- **V4 - MS MARCO & Single-Machine Scalability - Complete**
   - controlled nested corpora from **1K to 250K documents**
   - 300 fixed evaluation queries
   - embedding-time and memory scaling
@@ -64,14 +66,14 @@ The project has evolved from local semantic retrieval and RAG evaluation to **MS
   - **250K embedding time: approximately 2.97 hours**
   - identified document embedding as the dominant preprocessing bottleneck
 
-- ✅ **V5 — Apache Spark Local Parallelism**
+- **V5 - Apache Spark Local Parallelism - Complete**
   - PySpark / Apache Spark embedding pipelines
   - Sentence Transformers inside Spark workers
   - controlled Spark partition and PyTorch-thread experiments
   - Spark-native corpus ingestion
   - demonstrated that increasing local Spark parallelism does not create additional physical compute resources
 
-- ✅ **V6 — Distributed Experiment Framework**
+- **V6 - Distributed Experiment Framework - Complete**
   - configuration-driven Spark experiments
   - experiment and environment provenance
   - expected-document-count safeguards
@@ -83,9 +85,9 @@ The project has evolved from local semantic retrieval and RAG evaluation to **MS
   - strong-scaling analysis framework
   - explicit distinction between **Spark partitions and physical workers**
 
-- ⏳ **V7 — GCP Multi-Worker Spark Scaling**
+- **V7 - GCP Multi-Worker Spark Scaling - Next**
   - genuine multi-worker cloud execution
-  - **1 → 2 → 4 worker strong-scaling experiments**
+  - **1 -> 2 -> 4 worker strong-scaling experiments**
   - 25K distributed validation
   - 100K primary strong-scaling benchmark
   - 250K large-workload validation
@@ -110,40 +112,41 @@ True distributed speedup will therefore be measured only when additional workers
 **Repository:** [BigDataAISystems/scalable-rag-spark](https://github.com/BigDataAISystems/scalable-rag-spark)
 
 ---
-### 🔹 Big Data Vector Search
+
+### Big Data Vector Search
 
 A research-oriented project investigating the **performance, scalability, retrieval quality, memory consumption, and system design of semantic vector search over increasingly large embedding collections**.
 
-**V1 — Exact Vector Search Baseline: Complete**
+**V1 - Exact Vector Search Baseline - Complete**
 
 - Controlled MS MARCO benchmark from **1K to 100K documents**
 - 300 fixed evaluation queries
 - Sentence Transformer embeddings
 - 384-dimensional normalized vectors
 - FAISS `IndexFlatIP` exact search
-- Validated exact Top-10 nearest-neighbor ground truth
+- validated exact Top-10 nearest-neighbor ground truth
 - SHA-256 experiment provenance
-- Search latency, memory, storage, and retrieval-quality analysis
-
+- search latency, memory, storage, and retrieval-quality analysis
 
 **Selected V1 Results**
 
-- Corpus size: **1K → 100K (100×)**
-- Exact index size: **1.46 MB → 146.48 MB**
-- Mean search latency: **0.160 ms → 17.649 ms**
-- P95 search latency: **0.226 ms → 23.755 ms**
-- Recall@5: **0.9967 → 0.9300**
+- Corpus size: **1K -> 100K (100x)**
+- Exact index size: **1.46 MB -> 146.48 MB**
+- Mean search latency: **0.160 ms -> 17.649 ms**
+- P95 search latency: **0.226 ms -> 23.755 ms**
+- Recall@5: **0.9967 -> 0.9300**
 
-**Next — V2:** Approximate Nearest Neighbor search using **HNSW, IVF, and IVF-PQ**, evaluated against the validated V1 exact-search ground truth.
+**Next - V2:** Approximate Nearest Neighbor search using **HNSW, IVF, and IVF-PQ**, evaluated against the validated V1 exact-search ground truth.
 
-🔗 **Repository:** [BigDataAISystems/big-data-vector-search](https://github.com/BigDataAISystems/big-data-vector-search)
+**Repository:** [BigDataAISystems/big-data-vector-search](https://github.com/BigDataAISystems/big-data-vector-search)
 
 ---
-### 🔹 LLM-Powered Big Data Analytics
+
+### LLM-Powered Big Data Analytics
 
 Natural-language interfaces and LLM-assisted analytics over large-scale structured and unstructured data.
 
-### 🔹 Streaming Data + AI
+### Streaming Data + AI
 
 Exploration of real-time data processing and AI-assisted analytics using technologies such as Spark Structured Streaming.
 
@@ -179,7 +182,7 @@ Applied research, student-industry projects, datasets and case studies, prototyp
 
 ## Technologies
 
-`Apache Spark` · `PySpark` · `Python` · `SQL` · `Snowflake` · `Google Cloud` · `Databricks` · `Cloud Computing` · `Vector Search` · `FAISS` · `RAG` · `LLMs`
+`Apache Spark` | `PySpark` | `Python` | `SQL` | `Snowflake` | `Google Cloud` | `Databricks` | `Cloud Computing` | `Vector Search` | `FAISS` | `RAG` | `LLMs`
 
 ---
 
@@ -193,10 +196,11 @@ His research focuses on **Big Data, large-scale data systems, cloud computing, a
 
 ## Links
 
-- **Academic Website:** https://mebrahimii.github.io/
-- **GitHub Organization:** https://github.com/BigDataAISystems
-- **Scalable RAG Project:** https://github.com/BigDataAISystems/scalable-rag-spark
-- **CSUN Computer Science:** https://www.csun.edu/engineering-computer-science/computer-science
+- **Academic Website:** [https://mebrahimii.github.io/](https://mebrahimii.github.io/)
+- **GitHub Organization:** [https://github.com/BigDataAISystems](https://github.com/BigDataAISystems)
+- **Scalable RAG Project:** [https://github.com/BigDataAISystems/scalable-rag-spark](https://github.com/BigDataAISystems/scalable-rag-spark)
+- **Big Data Vector Search:** [https://github.com/BigDataAISystems/big-data-vector-search](https://github.com/BigDataAISystems/big-data-vector-search)
+- **CSUN Computer Science:** [https://www.csun.edu/engineering-computer-science/computer-science](https://www.csun.edu/engineering-computer-science/computer-science)
 
 ---
 
