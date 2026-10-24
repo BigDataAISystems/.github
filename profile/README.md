@@ -110,11 +110,35 @@ True distributed speedup will therefore be measured only when additional workers
 **Repository:** [BigDataAISystems/scalable-rag-spark](https://github.com/BigDataAISystems/scalable-rag-spark)
 
 ---
-
 ### 🔹 Big Data Vector Search
 
-Experiments with large-scale embedding generation, vector indexing, semantic retrieval, and vector-search performance.
+A research-oriented project investigating the **performance, scalability, retrieval quality, memory consumption, and system design of semantic vector search over increasingly large embedding collections**.
 
+**V1 — Exact Vector Search Baseline: Complete**
+
+- Controlled MS MARCO benchmark from **1K to 100K documents**
+- 300 fixed evaluation queries
+- Sentence Transformer embeddings
+- 384-dimensional normalized vectors
+- FAISS `IndexFlatIP` exact search
+- Validated exact Top-10 nearest-neighbor ground truth
+- SHA-256 experiment provenance
+- Search latency, memory, storage, and retrieval-quality analysis
+
+
+**Selected V1 Results**
+
+- Corpus size: **1K → 100K (100×)**
+- Exact index size: **1.46 MB → 146.48 MB**
+- Mean search latency: **0.160 ms → 17.649 ms**
+- P95 search latency: **0.226 ms → 23.755 ms**
+- Recall@5: **0.9967 → 0.9300**
+
+**Next — V2:** Approximate Nearest Neighbor search using **HNSW, IVF, and IVF-PQ**, evaluated against the validated V1 exact-search ground truth.
+
+🔗 **Repository:** [BigDataAISystems/big-data-vector-search](https://github.com/BigDataAISystems/big-data-vector-search)
+
+---
 ### 🔹 LLM-Powered Big Data Analytics
 
 Natural-language interfaces and LLM-assisted analytics over large-scale structured and unstructured data.
